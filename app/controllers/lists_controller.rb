@@ -32,10 +32,11 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :picture_url)
   end
 
   def find_list
     @list = List.find(params[:id])
   end
+
 end
