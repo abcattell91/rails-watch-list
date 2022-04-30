@@ -11,9 +11,9 @@ puts 'cleaning up database'
 Movie.destroy_all
 puts 'database is clean'
 
-url = 'https://tmdb.lewagon.com/movie/top_rated'
+url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=bee3f4d040e52ad1c0e3eac80d78e941&language=en-US'
 25.times do |m|
-  movies = JSON.parse(URI.open("#{url}?page=#{m + 1}").read)['results']
+  movies = JSON.parse(URI.open("#{url}&page=#{m + 1}").read)['results']
   movies.each do |movie|
     puts "creating #{movie['title']}",
          base_poster_url = 'https://image.tmdb.org/t/p/original'
