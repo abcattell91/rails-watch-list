@@ -1,4 +1,5 @@
-<div class="container p-5 m-5 shadow bg-white rounded">
+<%= render 'navbar' %>
+<div class="p-5 mt-5 shadow bg-white rounded justify-content-center">
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.association :movie %>
     <%= f.input :comment %>

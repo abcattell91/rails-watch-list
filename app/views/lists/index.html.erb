@@ -1,24 +1,20 @@
 <%= render 'navbar' %>
 
-<div class="home-banner">
-  <h1>Welcome to the Movie Lists</h1>
-</div>
+<div class="home-banner" data-controller="typed-js"></div>
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="row row-cols-1 row-cols-md-3 mt-3">
-    <% @lists.each do |list| %>
-    <div class="col-md-4 mb-4">
-      <div class="card h-100 img-thumbnail mb-2" style="">
-          <img class="card-img-top img-thumbnail" src="<%=list.picture_url%>">
-        <div class="card-body">
-          <div class="card-title"><h5><%= list.name%></h5></div>
-          <%= link_to 'View', list_path(list) , class: "flat-info btn btn-outline-primary btn-sm" %>
-          <%= link_to 'Remove', list_path(list), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary btn-sm" %>
+
+  <div class="cards-container">
+    <div class="cards"><% @lists.each do |list| %>
+      <div class="card" style="background-image: url(<%=list.picture_url%>)"><h2><%= list.name%></h2>
+        <div class="dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Info</button>
+          <ul class="dropdown-menu ">
+            <%= link_to 'View', list_path(list) , class: "dropdown-item" %>
+            <%= link_to 'Remove', list_path(list), method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item" %>
+          </ul>
         </div>
       </div>
+          <% end %>
     </div>
-    <% end %>
-  </div>
   </div>
 </div>
