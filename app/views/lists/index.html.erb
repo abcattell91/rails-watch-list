@@ -5,12 +5,14 @@
 
   <div class="cards-container">
     <div class="cards"><% @lists.each do |list| %>
-      <div class="card" style="background-image: url(<%=list.picture_url%>)"><h2><%= list.name%></h2>
+      <div class="card" style="background-image: url(<%=list.picture_url%>)">
+      <h2><%= list.name%></h2>
         <div class="dropdown">
           <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Info</button>
           <ul class="dropdown-menu ">
             <%= link_to 'View', list_path(list) , class: "dropdown-item" %>
             <%= link_to 'Remove', list_path(list), method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item" %>
+            <%= link_to 'Add Movie', new_list_bookmark_path(list) , class: "dropdown-item" %>
           </ul>
         </div>
       </div>
