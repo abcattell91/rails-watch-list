@@ -1,24 +1,50 @@
 <%= render 'navbar' %>
 
+
 <div class="p-5 mt-5 shadow bg-white rounded justify-content-center">
-<h1 class="text-center"><%= @list.name %></h1>
-<%= link_to 'Add New Movie', new_list_bookmark_path(@list), class: 'btn btn-lg btn-success' %>
-<div class="row row-cols-1 row-cols-md-3 mt-3">
-  <% @list.bookmarks.each do |bookmark| %>
-  <div class="col-md-4 mb-4">
-    <div class="card h-100 img-thumbnail mb-2" style="">
+  <h1 class="text-center"><%= @list.name %></h1>
+  <%= link_to 'Add New Movie', new_list_bookmark_path(@list), class: 'btn btn-lg btn-success' %>
+  <div class="row row-cols-1 row-cols-md-3 mt-3">
+    <% @list.bookmarks.each do |bookmark| %>
+    <div class="col-md-4 mb-4">
+      <div class="shadow card h-100 img-thumbnail mb-2" style="">
+      <h2 class="m-1 p-1"><%= bookmark.movie.title %></h2>
         <img class="card-img img-thumbnail" src="<%=bookmark.movie.poster_url%>">
-      <div class="card-body">
+        <div class="card-body">
         <p class="card-text overview"><%= bookmark.movie.overview %></p>
         <hr>
-        <p class="card-text">Comments: <br><%= bookmark.comment %></p>
+        <small><em class="text-muted">Review:<br><%= bookmark.comment %></em></small>
+        </div>
+        <%= link_to 'Remove', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' }, class: "remove-button" %>
       </div>
-<%= link_to 'Remove', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary btn-sm" %>
+    </div>
+    <% end %>
+  </div>
+
+  <hr class="my-5">
+
+  <div class="row">
+    <div class="shadow p-5 col-12 col-sm-6">
+      <h3>Reviews</h3>
+      <% @list.reviews.each do |review| %>
+        <div>
+        <p><%= '⭐️' * review.rating %></p>
+          <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+          <p class="mb-0"><%= review.comment %></p>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+    <div class="col-12 col-sm-6">
+      <div class="bg-white rounded p-3">
+      <h5>Add your review</h5>
+      <%= simple_form_for [@list, @review] do |f| %>
+        <%= f.input :comment, placeholder: "Add your review here..." %>
+        <%= f.input :rating, placeholder: "Star 1...5" %>
+        <%= f.submit class:"btn btn-success" %>
+      <% end %>
+      </div>
     </div>
   </div>
-  <% end %>
-</div>
-
-<%= link_to 'Back', lists_path, class: 'btn btn-primary' %>
-
+  <%= link_to 'Back', lists_path, class: 'btn btn-primary mt-3' %>
 </div>

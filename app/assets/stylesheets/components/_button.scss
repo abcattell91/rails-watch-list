@@ -1,0 +1,11 @@
+.remove-button {
+  justify-content: end;
+  text-align: end;
+  color: red;
+  text-decoration: none;
+  margin: 10px;
+}
+.remove-button:hover {
+    color: rgb(70, 0, 0);
+    transition: 1s;
+}
