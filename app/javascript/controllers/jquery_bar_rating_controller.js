@@ -6,7 +6,7 @@ import "jquery-bar-rating/dist/themes/css-stars";
 export default class extends Controller {
   connect() {
     $(this.element).barrating({
-      theme: "fontawesome-stars"
+      theme: "css-stars"
     });
   }
 }
