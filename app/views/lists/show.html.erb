@@ -3,8 +3,8 @@
 
 <div class="p-5 mt-5 shadow bg-white rounded justify-content-center">
   <h1 class="text-center"><%= @list.name %></h1>
-  <button type="button" class="btn btn-flat" data-bs-toggle="modal" data-bs-target="#new_movie_modal">
-        add a movie
+  <button type="button" class="text-end btn btn-primary" data-bs-toggle="modal" data-bs-target="#new_movie_modal">
+        Add Movie
   </button>
   <%= render "bookmarks/new", list: @list %>
   <div class="row row-cols-1 row-cols-md-3 mt-3">

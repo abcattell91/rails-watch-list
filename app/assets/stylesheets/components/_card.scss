@@ -1,14 +1,12 @@
 .cards-container {
   display: flex;
+  flex-direction: wrap;
   margin-left: 100px;
   margin-right: 100px;
   .cards {
-    display: grid;
-    flex-grow: 1;
-    padding: 16px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 16px;
+
   }
+
   .card {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-size: cover;
@@ -21,8 +19,13 @@
     font-size: 32px;
     color: white;
     font-weight: bolder;
+    text-align: center;
     text-shadow: 0 0 10px rgba(0,0,0,0.7);
-    border-radius: 2px;
+    border-radius: 8px;
+    :hover {
+      color: rgb(70, 0, 0);
+      transition: 1s;
+    }
 
   }
 }
@@ -49,18 +52,24 @@
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 .add_movie {
-  text-decoration: none;
-  text-align: center;
-  color: white;
-  background-size: cover;
-  background-position: center;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-}
-.delete_list{
-  justify-content: end;
-  text-align: end;
   color: red;
   text-decoration: none;
-  margin: 10px;
+  text-align: center;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  :hover {
+    color: rgb(70, 0, 0);
+    transition: 1s;
+  }
+}
+.delete_list{
+  color: red;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  :hover {
+    color: rgb(70, 0, 0);
+    transition: 1s;
+  }
 }
