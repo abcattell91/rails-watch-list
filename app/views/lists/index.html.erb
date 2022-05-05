@@ -7,6 +7,7 @@
     <div class="cards"><% @lists.each do |list| %>
       <div class="card" style="background-image: url(<%=list.picture_url%>)">
       <h2><%= list.name%></h2>
+
         <div class="dropdown">
           <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Info</button>
           <ul class="dropdown-menu ">
@@ -19,4 +20,6 @@
           <% end %>
     </div>
   </div>
+
+
 </div>
