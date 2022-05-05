@@ -5,7 +5,7 @@
 
   <div class="cards-container">
     <div class="cards"><% @lists.each do |list| %>
-      <div class="card" style="background-image: url(<%=list.picture_url%>)">
+      <div class="card" style="background-image: url(<%=list.photo.attached? ? cl_image_path(list.photo.key) : list.picture_url%>)">
       <h2><%= list.name%></h2>
 
         <div class="dropdown">
