@@ -38,3 +38,29 @@
   max-height: 500px;
   object-fit: cover;
 }
+
+.list_name {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+.add_movie {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+.delete_list{
+  justify-content: end;
+  text-align: end;
+  color: red;
+  text-decoration: none;
+  margin: 10px;
+}

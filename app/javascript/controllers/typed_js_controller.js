@@ -7,7 +7,9 @@ export default class extends Controller {
     new Typed(this.element, {
       strings: ["WELCOME TO MY MOVIE LISTS"],
       typeSpeed: 75,
-      loop: true
+      loop: true,
+      loopCount:Infinity,
+      showCursor: false
     });
   }
 }

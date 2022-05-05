@@ -2,23 +2,12 @@
 
 <div class="home-banner" data-controller="typed-js"></div>
 
-
   <div class="cards-container">
     <div class="cards"><% @lists.each do |list| %>
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=list.photo.attached? ? cl_image_path(list.photo.key) : list.picture_url%>)">
-      <h2><%= list.name%></h2>
-
-        <div class="dropdown">
-          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Info</button>
-          <ul class="dropdown-menu ">
-            <%= link_to 'View', list_path(list) , class: "dropdown-item" %>
-
-            <%= link_to 'Add Movie', new_list_bookmark_path(list) , class: "dropdown-item" %>
-          </ul>
-        </div>
-        <%= link_to list_path(list), method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <i class="fa-solid fa-xmark-large"></i>
-          <% end %>
+      <h2><%= link_to list.name, list_path(list), class: "list_name"%></h2>
+        <%= link_to '<i class="fa-solid fa-xmark"></i>'.html_safe, list_path(list), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_list" %>
+        <%= link_to '<i class="fa-solid fa-plus"></i>'.html_safe, new_list_bookmark_path(list) , class: "add_movie" %>
       </div>
           <% end %>
     </div>
