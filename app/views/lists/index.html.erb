@@ -1,17 +1,16 @@
-<%= render 'navbar' %>
+
 <div class="home-banner text-center text-white">
     <h3 class="typed-js" data-controller="typed-js"></h3>
 </div>
 
   <div class="cards-container">
-    <div class="cards"><% @lists.each do |list| %>
+    <% @lists.each do |list| %>
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=list.photo.attached? ? cl_image_path(list.photo.key) : list.picture_url%>)">
-      <h2><%= link_to list.name, list_path(list), class: "list_name"%></h2>
-        <%= link_to '<i class="fa-solid fa-xmark"></i>'.html_safe, list_path(list), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_list" %>
-        <%= link_to '<i class="fa-solid fa-plus"></i>'.html_safe, new_list_bookmark_path(list) , class: "add_movie" %>
+        <div class="list-name"><%= link_to list.name, list_path(list)%></div>
+        <div class="icon-1"><%= link_to '<i class="fa-solid fa-xmark"></i>'.html_safe, list_path(list), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_list" %></div>
+        <div class="icon-2"><%= link_to '<i class="fa-solid fa-plus"></i>'.html_safe, new_list_bookmark_path(list) , class: "add_movie" %></div>
       </div>
           <% end %>
-    </div>
   </div>
 
 

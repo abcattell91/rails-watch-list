@@ -1,35 +1,51 @@
 .cards-container {
   display: flex;
-  flex-direction: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-left: 100px;
   margin-right: 100px;
-  .cards {
-
-  }
+  text-align: center;
 
   .card {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    background-size: cover;
     background-position: center;
-    height: 400px;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 32px;
-    color: white;
-    font-weight: bolder;
-    text-align: center;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
     border-radius: 8px;
+    width: 400px;
+    height: 300px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
     :hover {
       color: rgb(70, 0, 0);
       transition: 1s;
     }
-
+    a {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    font-size: 36px;
+    }
+  }
+  .icon-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px;
+    font-size: 24px;
+  }
+  .icon-2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 8px;
+    font-size: 24px;
   }
 }
-
 .overview {
   overflow: hidden;
   display: -webkit-box;
@@ -40,36 +56,4 @@
 .card-img {
   max-height: 500px;
   object-fit: cover;
-}
-
-.list_name {
-  text-decoration: none;
-  text-align: center;
-  color: white;
-  background-size: cover;
-  background-position: center;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-}
-.add_movie {
-  color: red;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  :hover {
-    color: rgb(70, 0, 0);
-    transition: 1s;
-  }
-}
-.delete_list{
-  color: red;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  :hover {
-    color: rgb(70, 0, 0);
-    transition: 1s;
-  }
 }

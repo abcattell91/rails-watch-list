@@ -1,3 +1,4 @@
+
 <div class="p-5 mt-5 shadow bg-white rounded justify-content-center">
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.association :movie, collection: Movie.all.order(:title), prompt: "Select a movie", input_html: {data: {controller: 'select2', select2_options_value: {tags: true}}} %>
