@@ -38,13 +38,6 @@
     margin: 8px;
     font-size: 24px;
   }
-  .icon-2 {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 8px;
-    font-size: 24px;
-  }
 }
 .overview {
   overflow: hidden;
@@ -56,4 +49,24 @@
 .card-img {
   max-height: 500px;
   object-fit: cover;
+}
+
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-large {
+  height: 50vh;
+  max-height: 400px;
 }

@@ -1,21 +1,16 @@
 .home-banner {
+  position: relative;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.refinery29.com%2Fimages%2F9556999.jpg%3Fcrop%3D40%3A21&f=1&nofb=1');
   background-size:auto;
-  height: 200px;
-  color: #eee;
-  padding-top: 40vh;
-  font-size: 60px;
-  display: flex;
-  box-sizing: border-box;
+  height: 40vh;
   width: 100%;
   margin-bottom: 30px;
 }
 .typed-js {
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  margin-top: 200px;
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
   font-size: 40px;
 }

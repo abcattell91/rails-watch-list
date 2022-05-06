@@ -9,7 +9,7 @@ export default class extends Controller {
       typeSpeed: 75,
       loop: true,
       loopCount:Infinity,
-      showCursor: false
+      showCursor: false,
     });
   }
 }
