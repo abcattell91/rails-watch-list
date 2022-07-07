@@ -91,3 +91,4 @@ To do:
 ## Acknowledgements
 Created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team along with the help of Le Wagon Teaching Assistants.<br>
 This product uses the TMDB API but is not endorsed or certified by TMDB.
+
